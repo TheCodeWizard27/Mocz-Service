@@ -1,0 +1,28 @@
+﻿<Window x:Class="Mocz_Parser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mocz_Parser"
+        mc:Ignorable="d"
+        Loaded="MainWindow_OnLoaded"
+        Title="MoczParser" ResizeMode="CanMinimize" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="24">
+            <Label>Input:</Label>
+            <TextBox Name="InputBox" Padding="4" BorderThickness="0, 0, 0, 1"></TextBox>
+            <Button Name="ReadBtn" Width="100" Margin="0, 8, 8, 0"  Padding="4" Background="White" BorderThickness="1" ClipToBounds="True" HorizontalAlignment="Right" BorderBrush="#FFE41B13" Click="ReadBtn_Click">ReadList</Button>
+        </StackPanel>
+        <ListBox ItemsSource="{Binding ResultList}" Grid.Column="1" Margin="24">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

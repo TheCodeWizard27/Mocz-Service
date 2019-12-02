@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/Mocz Parser/v15
+/Mocz Parser/bin/Debug
+/Mocz Parser/obj/Debug
