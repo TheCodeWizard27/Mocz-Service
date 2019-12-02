@@ -4,7 +4,7 @@ An attempt to try and parse the mocz library made by google for japanese input.
 The Files used are the same as in the following folder (not every file has been implemented yet.)
 https://github.com/google/mozc/tree/master/src/data/dictionary_oss
 
-#Licenses
+# Licenses
 -------------------------------------------------------------------------------
 IPAdic is licensed as follows:
 
