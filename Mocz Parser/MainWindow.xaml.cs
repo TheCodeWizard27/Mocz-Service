@@ -46,8 +46,14 @@ namespace Mocz_Parser
         {
             if (string.IsNullOrWhiteSpace(InputBox.Text)) return;
 
-            _handler.LoadResults(InputBox.Text);
-
+            try
+            {
+                var shouldUseGoogleApi = GoogleApiRadioBtn.IsChecked.GetValueOrDefault();
+                _handler.LoadResults(InputBox.Text, shouldUseGoogleApi);
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Couldn't Load Results", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

@@ -13,9 +13,14 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Margin="24">
-            <Label>Input:</Label>
+            <Label Foreground="Gray" Padding="0">Input:</Label>
             <TextBox Name="InputBox" Padding="4" BorderThickness="0, 0, 0, 1"></TextBox>
             <Button Name="ReadBtn" Width="100" Margin="0, 8, 8, 0"  Padding="4" Background="White" BorderThickness="1" ClipToBounds="True" HorizontalAlignment="Right" BorderBrush="#FFE41B13" Click="ReadBtn_Click">ReadList</Button>
+            <StackPanel>
+                <Label Foreground="Gray" Padding="0">IME:</Label>
+                <RadioButton Margin="4, 4, 4, 0" Content="DIY Method"/>
+                <RadioButton IsChecked="True" Name="GoogleApiRadioBtn" Margin="4, 4, 4, 0" Content="Google IME API"/>
+            </StackPanel>
         </StackPanel>
         <ListBox ItemsSource="{Binding ResultList}" Grid.Column="1" Margin="24">
             <ListBox.ItemTemplate>

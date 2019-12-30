@@ -34,7 +34,7 @@ namespace Mocz_Parser
         {
             var parts = line.Split('\t');
             Ipadic.Add(
-                new Tuple<int, Tuple<string, string>>(index*1000+Convert.ToInt32(parts[1]), new Tuple<string, string>(parts[0], parts[4]))
+                new Tuple<int, Tuple<string, string>>(index+Convert.ToInt32(parts[1]), new Tuple<string, string>(parts[0], parts[4]))
                 );
         }
 
