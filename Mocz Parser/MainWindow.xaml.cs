@@ -48,12 +48,20 @@ namespace Mocz_Parser
 
             try
             {
-                var shouldUseGoogleApi = GoogleApiRadioBtn.IsChecked.GetValueOrDefault();
-                _handler.LoadResults(InputBox.Text, shouldUseGoogleApi);
+                _handler.LoadResults(InputBox.Text, GetInputMethodInUse());
             }catch(Exception ex)
             {
                 MessageBox.Show("Couldn't Load Results", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private InputMethod GetInputMethodInUse()
+        {
+            var method = InputMethod.LocalApi;
+            method = GoogleApiRadioBtn.IsChecked.GetValueOrDefault() ? InputMethod.GoogleApi : method;
+            method = JMDictApiRadioBtn.IsChecked.GetValueOrDefault() ? InputMethod.JMDictApi : method;
+
+            return method;
         }
     }
 }

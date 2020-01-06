@@ -10,9 +10,17 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Mocz_Parser
 {
+    public enum InputMethod
+    {
+        LocalApi,
+        GoogleApi,
+        JMDictApi
+    }
+
     public class MoczHandler : INotifyPropertyChanged
     {
 
@@ -31,17 +39,22 @@ namespace Mocz_Parser
             _moczModel.Load();
         }
 
-        public void LoadResults(string input, bool usegoogleApi = false)
+        public void LoadResults(string input, InputMethod method)
         {
             ResultList.Clear();
 
-            if(usegoogleApi)
+            switch (method)
             {
-                LoadResultsWithGoogleApi(input);
-                return;
+                case InputMethod.GoogleApi:
+                    LoadResultsWithGoogleApi(input);
+                    return;
+                case InputMethod.JMDictApi:
+                    LoadResultsWithJMDictApi(input);
+                    return;
+                default:
+                    LoadResultsWithLocalApi(input);
+                    return;
             }
-
-            LoadResultsWithLocalApi(input);
         }
 
         #region Private Methods
@@ -50,16 +63,34 @@ namespace Mocz_Parser
         {
             /* Example of file Structure:
              * 
-             * Input Text | leftId | middleId | RightId |    Text
-             *    あいたた	  2584	      142	   5884	  あいたた
+             * Input Text | leftId | rightId | cost |    Text
+             *    あいたた	  2584	     142   5884	  あいたた
              *    
              * First approach select other Parts according to the first id.
              */
-            var leftId = _moczModel.Ipadic.FirstOrDefault(x => x.Item2.Item1 == input).Item1;
+            var matches = _moczModel.Ipadic.Where(x => x.Item2.Item1 == input);
+            foreach (var match in matches)
+            {
+                ResultList.Add(match.Item2.Item2);
+            }
 
+            //var leftId = _moczModel.Ipadic.FirstOrDefault(x => x.Item2.Item1 == input).Item1;
+            /*
             foreach (var entry in _moczModel.Ipadic.Where(x => x.Item1 == leftId))
             {
                 ResultList.Add(entry.Item2.Item2);
+            }*/
+        }
+
+        private void LoadResultsWithJMDictApi(string input)
+        {
+            using (var reader = XmlReader.Create(new FileStream("jmdict/JMdict_e", FileMode.Open)))
+            {
+                Console.Write("asdjfhasdjf");
+                while (reader.Read())
+                {
+                    var node = reader.NodeType;
+                }
             }
         }
 

@@ -19,6 +19,7 @@
             <StackPanel>
                 <Label Foreground="Gray" Padding="0">IME:</Label>
                 <RadioButton Margin="4, 4, 4, 0" Content="DIY Method"/>
+                <RadioButton Margin="4, 4, 4, 0" Name="JMDictApiRadioBtn" Content="JMDict Method"/>
                 <RadioButton IsChecked="True" Name="GoogleApiRadioBtn" Margin="4, 4, 4, 0" Content="Google IME API"/>
             </StackPanel>
         </StackPanel>
