@@ -48,9 +48,6 @@ namespace Mocz_Parser
                 case InputMethod.GoogleApi:
                     LoadResultsWithGoogleApi(input);
                     return;
-                case InputMethod.JMDictApi:
-                    LoadResultsWithJMDictApi(input);
-                    return;
                 default:
                     LoadResultsWithLocalApi(input);
                     return;
@@ -68,29 +65,11 @@ namespace Mocz_Parser
              *    
              * First approach select other Parts according to the first id.
              */
-            var matches = _moczModel.Ipadic.Where(x => x.Item2.Item1 == input);
+            var matches = _moczModel.Ipadic.Where(x => x.InputText == input);
             foreach (var match in matches)
             {
-                ResultList.Add(match.Item2.Item2);
-            }
-
-            //var leftId = _moczModel.Ipadic.FirstOrDefault(x => x.Item2.Item1 == input).Item1;
-            /*
-            foreach (var entry in _moczModel.Ipadic.Where(x => x.Item1 == leftId))
-            {
-                ResultList.Add(entry.Item2.Item2);
-            }*/
-        }
-
-        private void LoadResultsWithJMDictApi(string input)
-        {
-            using (var reader = XmlReader.Create(new FileStream("jmdict/JMdict_e", FileMode.Open)))
-            {
-                Console.Write("asdjfhasdjf");
-                while (reader.Read())
-                {
-                    var node = reader.NodeType;
-                }
+                if (ResultList.Contains(match.Conversion)) continue;
+                ResultList.Add(match.Conversion);
             }
         }
 

@@ -11,7 +11,7 @@ namespace Mocz_Parser
     public class MoczModel
     {
 
-        public List<Tuple<int, Tuple<string, string>>> Ipadic { get; private set; } = new List<Tuple<int, Tuple<string, string>>>();
+        public List<DictionaryEntry> Ipadic { get; private set; } = new List<DictionaryEntry>();
 
         public void Load()
         {
@@ -33,9 +33,14 @@ namespace Mocz_Parser
         private void LoadLine(int index, string line)
         {
             var parts = line.Split('\t');
-            Ipadic.Add(
-                new Tuple<int, Tuple<string, string>>(index+Convert.ToInt32(parts[1]), new Tuple<string, string>(parts[0], parts[4]))
-                );
+            Ipadic.Add(new DictionaryEntry()
+            {
+                InputText = parts[0],
+                Conversion = parts[4],
+                Cost = Convert.ToInt32(parts[3]),
+                LeftContextId = Convert.ToInt32(parts[1]),
+                RightContextId = Convert.ToInt32(parts[2])
+            });
         }
 
     }

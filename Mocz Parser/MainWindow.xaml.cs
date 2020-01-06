@@ -59,7 +59,6 @@ namespace Mocz_Parser
         {
             var method = InputMethod.LocalApi;
             method = GoogleApiRadioBtn.IsChecked.GetValueOrDefault() ? InputMethod.GoogleApi : method;
-            method = JMDictApiRadioBtn.IsChecked.GetValueOrDefault() ? InputMethod.JMDictApi : method;
 
             return method;
         }
