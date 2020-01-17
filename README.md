@@ -1,8 +1,13 @@
-# Mocz-Parser
+# Contents
+## Mocz-Parser
 An attempt to try and parse the mocz japanese dictionary made by google for japanese input.
 
 The Files used are the same as in the following folder (not every file has been implemented yet.)
 https://github.com/google/mozc/tree/master/src/data/dictionary_oss
+
+## Dictionary Packager
+Packages all the needed Information of the mozc dictionary into a compiled file that only has
+the needed contents.
 
 # Licenses
 -------------------------------------------------------------------------------
