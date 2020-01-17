@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mocz Parser", "Mocz Parser\Mocz Parser.csproj", "{22B39666-27D1-4AB3-88ED-BA076DA22AE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary Packager", "Dictionary Packager\Dictionary Packager.csproj", "{BA943836-97C1-4623-92F1-29EF1283100F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{22B39666-27D1-4AB3-88ED-BA076DA22AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22B39666-27D1-4AB3-88ED-BA076DA22AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22B39666-27D1-4AB3-88ED-BA076DA22AE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA943836-97C1-4623-92F1-29EF1283100F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA943836-97C1-4623-92F1-29EF1283100F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA943836-97C1-4623-92F1-29EF1283100F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA943836-97C1-4623-92F1-29EF1283100F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

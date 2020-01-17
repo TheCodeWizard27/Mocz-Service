@@ -1,45 +1,37 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dictionary_Packager.Japanese;
+using Newtonsoft.Json;
 
 namespace Mocz_Parser
 {
     public class MoczModel
     {
 
-        public List<DictionaryEntry> Ipadic { get; private set; } = new List<DictionaryEntry>();
+        public List<JapaneseDictEntry> Ipadic { get; private set; } = new List<JapaneseDictEntry>();
 
         public void Load()
         {
-
-            for (var i = 0; i < 10; i++)
+            Task.Run(() =>
             {
-                var lines = File.ReadLines($"dictionary/dictionary0{i}.txt", Encoding.UTF8);
-
-                foreach (var line in lines) LoadLine(i, line);
-            }
-
-        }
-
-        /// <summary>
-        /// Loads the line into the List.
-        /// </summary>
-        /// <param name="index">Index of Dictionary page.</param>
-        /// <param name="line">Line as string of Dictionary page.</param>
-        private void LoadLine(int index, string line)
-        {
-            var parts = line.Split('\t');
-            Ipadic.Add(new DictionaryEntry()
-            {
-                InputText = parts[0],
-                Conversion = parts[4],
-                Cost = Convert.ToInt32(parts[3]),
-                LeftContextId = Convert.ToInt32(parts[1]),
-                RightContextId = Convert.ToInt32(parts[2])
+                using (var stream = File.Open("dictionary/dictionary.cdf", FileMode.Open))
+                {
+                    using (var gzipStream = new GZipStream(stream, CompressionMode.Decompress))
+                    {
+                        using (var sr = new StreamReader(gzipStream, Encoding.UTF8))
+                        {
+                            var content = sr.ReadToEnd();
+                            Ipadic = JsonConvert.DeserializeObject<List<JapaneseDictEntry>>(content);
+                        }
+                    }
+                }
             });
         }
 

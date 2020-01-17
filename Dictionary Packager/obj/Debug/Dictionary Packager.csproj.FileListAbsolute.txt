@@ -1,0 +1,25 @@
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary00.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary01.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary02.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary03.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary04.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary05.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary06.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary07.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary08.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\dictionary09.txt
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\emoticon.tsv
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Japanese\dictionary\single_kanji.tsv
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Dictionary Packager.exe.config
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Dictionary Packager.exe
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Dictionary Packager.pdb
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\DotNetZip.dll
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\DotNetZip.pdb
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\DotNetZip.xml
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\obj\Debug\Dictionary Packager.csprojAssemblyReference.cache
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\obj\Debug\Dictionary Packager.csproj.CoreCompileInputs.cache
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\obj\Debug\Dictionary Packager.csproj.CopyComplete
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\obj\Debug\Dictionary Packager.exe
+C:\Users\chscny\Source\Repos\Mocz-Parser\Dictionary Packager\obj\Debug\Dictionary Packager.pdb

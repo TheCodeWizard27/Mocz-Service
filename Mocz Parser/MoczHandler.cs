@@ -11,6 +11,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Dictionary_Packager.Japanese;
 
 namespace Mocz_Parser
 {
@@ -64,13 +65,27 @@ namespace Mocz_Parser
              *    あいたた	  2584	     142   5884	  あいたた
              *    
              * First approach select other Parts according to the first id.
+             * Then order them ascend to cost.
              */
-            var matches = _moczModel.Ipadic.Where(x => x.InputText == input);
+            var matches = _moczModel.Ipadic.Where(x => x.Hiragana == input);
+            matches = matches.GroupBy(x => x.DictionaryEntry).Select(x =>
+                new JapaneseDictEntry
+                {
+                    DictionaryEntry = x.Key,
+                    Cost = x.Sum(entry => entry.Cost)
+                });
+            matches = matches.OrderBy(x => x.Cost);
+            foreach (var japaneseDictEntry in matches)
+            {
+                ResultList.Add(japaneseDictEntry.DictionaryEntry);
+            }
+            /*
             foreach (var match in matches)
             {
-                if (ResultList.Contains(match.Conversion)) continue;
-                ResultList.Add(match.Conversion);
+                if (ResultList.Contains(match.DictionaryEntry)) continue;
+                ResultList.Add(match.DictionaryEntry);
             }
+            */
         }
 
         private void LoadResultsWithGoogleApi(string input)
