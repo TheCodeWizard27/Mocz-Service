@@ -15,6 +15,12 @@ namespace Dictionary_Packager
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.Write("\xfeff");
+
+            Console.WriteLine("\x043a\x043e\x0448\x043a\x0430 \x65e5\x672c\x56fd\U00002728⏰\u25a3\u06de\u02a5\u0414\u0416\u0489\u8966");
+
+            Console.ReadLine();
             new Program().Run();
         }
 
